@@ -1,0 +1,47 @@
+{
+  "runtime": {
+    "version": "v0.7.0",
+    "url": "https://github.com/storytold/deckcraft/releases/download/v0.7.0/deckcraft-0.7.0-windows-x64-portable.zip",
+    "sha256": "3d67962a206af89d66ef443a042efcc5386a14d4e0d9c056bc1f62a84bd7954c",
+    "executable": "deckcraft-cli.exe"
+  },
+  "ciRun": "https://github.com/partme-ai/full-aigc-plugins/actions/runs/38921194883",
+  "observedCommands": {
+    "slide.duplicate": {
+      "disabled_reason": "no presentation open",
+      "enabled": false,
+      "id": "slide.duplicate",
+      "label": "Duplicate Slide",
+      "menu": [
+        "Insert"
+      ],
+      "params": "{index?}",
+      "shortcut": null
+    },
+    "slide.layout": {
+      "disabled_reason": "no presentation open",
+      "enabled": false,
+      "id": "slide.layout",
+      "label": "Layout",
+      "menu": [
+        "Home",
+        "Slides"
+      ],
+      "params": "{layout: name or kind, index?}",
+      "shortcut": null
+    },
+    "shape.resize": {
+      "disabled_reason": "no presentation open",
+      "enabled": false,
+      "id": "shape.resize",
+      "label": "Size",
+      "menu": [
+        "Shape Format",
+        "Size"
+      ],
+      "params": "{w?, h?: pt, lockAspect?: bool, ids?}",
+      "shortcut": null
+    }
+  },
+  "sceneAcceptance": "NOT_RUN"
+}

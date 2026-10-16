@@ -1,0 +1,33 @@
+{
+  "schema": "craft-scenario-playbooks/v1",
+  "application": "deckcraft",
+  "id": "slide-redesign",
+  "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED",
+  "steps": [
+    {
+      "purpose": "复制当前页保留原版",
+      "command": "slide.duplicate",
+      "params": {}
+    },
+    {
+      "purpose": "改成有明确内容层级的版式",
+      "command": "slide.layout",
+      "params": {
+        "layout": "titleAndContent"
+      }
+    },
+    {
+      "purpose": "根据对象ID逐项调整而不是整体压缩",
+      "command": "shape.resize",
+      "params": {
+        "w": 240,
+        "h": 120,
+        "lockAspect": true
+      }
+    }
+  ],
+  "check": "重排后文字、数据与图表含义不变，阅读顺序更清楚。",
+  "boundary": "shape.resize 作用于明确选择的对象；不得拉伸人物照片或统计图。",
+  "templateOnly": true,
+  "argumentPolicy": "示例参数必须按当前输入、选择和实际返回ID替换；$变量先解析，数组变量整字段替换，不能将本文件直接当原生CLI脚本执行。"
+}

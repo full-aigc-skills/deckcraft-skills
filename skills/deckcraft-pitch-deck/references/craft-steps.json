@@ -1,0 +1,37 @@
+{
+  "schema": "craft-scenario-playbooks/v1",
+  "application": "deckcraft",
+  "id": "pitch-deck",
+  "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED",
+  "steps": [
+    {
+      "purpose": "先建立问题页",
+      "command": "slide.new",
+      "params": {
+        "layout": "titleAndContent",
+        "title": "用户问题",
+        "body": "有来源的问题与事实"
+      }
+    },
+    {
+      "purpose": "建立方案页",
+      "command": "slide.new",
+      "params": {
+        "layout": "titleAndContent",
+        "title": "解决方案",
+        "body": "方案、价值与约束"
+      }
+    },
+    {
+      "purpose": "加入演讲备注",
+      "command": "slide.notes",
+      "params": {
+        "text": "标注本页数据来源与待确认假设"
+      }
+    }
+  ],
+  "check": "叙事连贯、数字可追溯、没有过密文字，保留源工程与PPTX。",
+  "boundary": "示例只是信息结构，市场规模和业绩数字不能凭空补齐。",
+  "templateOnly": true,
+  "argumentPolicy": "示例参数必须按当前输入、选择和实际返回ID替换；$变量先解析，数组变量整字段替换，不能将本文件直接当原生CLI脚本执行。"
+}

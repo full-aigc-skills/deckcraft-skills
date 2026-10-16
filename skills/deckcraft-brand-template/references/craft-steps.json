@@ -1,0 +1,35 @@
+{
+  "schema": "craft-scenario-playbooks/v1",
+  "application": "deckcraft",
+  "id": "brand-template",
+  "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED",
+  "steps": [
+    {
+      "purpose": "读取实际可用主题",
+      "command": "design.themes",
+      "params": {}
+    },
+    {
+      "purpose": "建立标题页版式",
+      "command": "slide.new",
+      "params": {
+        "layout": "title",
+        "title": "品牌标题",
+        "body": "副标题与日期"
+      }
+    },
+    {
+      "purpose": "建立正文示例版",
+      "command": "slide.new",
+      "params": {
+        "layout": "titleAndContent",
+        "title": "正文规范",
+        "body": "一级要点\n二级说明"
+      }
+    }
+  ],
+  "check": "用最长标题与最多数据验证主题，检查字号、留白和品牌色。",
+  "boundary": "主题名称由 design.themes 返回后再设定，不猜测任意品牌主题存在。",
+  "templateOnly": true,
+  "argumentPolicy": "示例参数必须按当前输入、选择和实际返回ID替换；$变量先解析，数组变量整字段替换，不能将本文件直接当原生CLI脚本执行。"
+}
