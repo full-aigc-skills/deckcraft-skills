@@ -88,3 +88,8 @@ deckcraft-cli describe slide.new
 ## main模板与品牌复用候选
 
 新增[main模板、页面复用及结构化目录指导](skills/deckcraft-scenario-playbooks/references/main-workflows.md)，保留89个新增标识和旧目录重复项的歧义。已有场景及新增模板/复用流程通过Windows原生main回归：真实starter、指定页顺序、可编辑PPTX和源文件保持已核对；外部PowerPoint渲染及真实宿主同步仍未验收。
+
+
+### 六项核心场景技术回归（2026-10-17）
+
+培训、改版、品牌模板、周报、提案和数据故事已重建实际方法与参数，并同步到独立技能。Windows main运行39014846480和稳定版矩阵39014843673通过：逐页备注、复制后新ID、品牌主题、原生图表/表格及PPTX保存回读；图表回读后再次修改数据。只证明示例结构及技术链，不代表真实内容、外部PowerPoint版式或宿主画面同步验收。当前仍为开发候选，未上架公共市场。
