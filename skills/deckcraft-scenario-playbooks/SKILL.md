@@ -22,3 +22,7 @@ license: Apache-2.0
 独立CLI语法：`deckcraft-cli run --cmd <id=JSON> --save output.deckcraft`。每个 `--cmd` 的值为方法ID、等号、JSON对象组成的一个argv参数。把整组步骤放在同一次run，避免光标、当前表格、图形选择丢失。组合多个场景时只执行一次 `file.new`，其余流程跳过 `newDocumentOnly:true` 步骤，从 `slide.new` 开始；给既有页补备注时用实际页 index，不新建示例页。比较表与趋势图可以按此合并到一份演示，保留两页各自备注。使用0.7.0原生CLI命令目录作为观察依据；执行前查询实际版本和schema。保存后新进程重开，检查内容、公式或对象；导出格式另行检查。
 
 [结构化步骤](references/recipes.json)含测试输入的可观察断言；[命令证据](references/command-evidence.json)证明方法在固定运行时被观察，不证明场景效果已验收。[来源与许可](references/sources.json)记录借鉴的GitHub工作流事实，正文与参数例子为原创适配，没有执行外部Office脚本。
+
+## 技能商店场景经验
+
+遇到用证据支撑演示叙事、结构化方案比较、讲稿和可见页面分别检查时，读取[商店工作流适配](references/market-workflows.md)，使用对应的Craft方法和实际结果检查。上游技能不作为运行依赖。
