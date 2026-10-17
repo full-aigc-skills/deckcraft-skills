@@ -503,5 +503,17 @@
   "verifiedOutputs": 20,
   "mainCapabilities": null,
   "upstreamCapabilities": null,
-  "runtimeValidation": "existing eight workflows PASS; new template/reuse workflow NOT_TESTED"
+  "runtimeValidation": "existing eight workflows PASS; new template/reuse workflow NOT_TESTED",
+  "newTemplateWorkflow": {
+    "run": 39010982169,
+    "status": "PASS_NATIVE_WINDOWS",
+    "actualStarterTemplate": "PASS",
+    "selectedBrandPagesInOrder": "PASS",
+    "destinationAndSourcePreserved": "PASS",
+    "editablePptxText": "PASS",
+    "complexFormattingPreservation": "NOT_TESTED",
+    "externalPowerPointRendering": "NOT_TESTED",
+    "installedHostSync": "NOT_TESTED",
+    "templatesActualResponse": "object with templates array; help declares array"
+  }
 }
