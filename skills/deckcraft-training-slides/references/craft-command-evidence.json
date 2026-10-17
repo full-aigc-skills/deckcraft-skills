@@ -7,28 +7,17 @@
   },
   "ciRun": "https://github.com/partme-ai/full-aigc-plugins/actions/runs/38921194883",
   "observedCommands": {
+    "file.new": {
+      "id": "file.new",
+      "catalogLine": "file.new — New Presentation: {theme?: name, template?: starter name, size?: [w,h] pt, blank?: bool}"
+    },
     "slide.fromOutline": {
-      "disabled_reason": "no presentation open",
-      "enabled": false,
       "id": "slide.fromOutline",
-      "label": "Slides from Outline…",
-      "menu": [
-        "Insert",
-        "Slides From"
-      ],
-      "params": "{text}",
-      "shortcut": null
+      "catalogLine": "slide.fromOutline — Slides from Outline…: {text, markdown?: bool (headings are slides, list items bullets)}"
     },
     "slide.notes": {
-      "disabled_reason": "no presentation open",
-      "enabled": false,
       "id": "slide.notes",
-      "label": "Notes",
-      "menu": [
-        "View"
-      ],
-      "params": "{text, index?}",
-      "shortcut": null
+      "catalogLine": "slide.notes — Notes: {text | body: formatted notes (as in slide.inspect's notesBody), index?} (text as typed: untouched notes keep their formatting)"
     }
   },
   "sceneAcceptance": "NOT_RUN"

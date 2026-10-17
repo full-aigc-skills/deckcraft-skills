@@ -7,25 +7,33 @@
   },
   "ciRun": "https://github.com/partme-ai/full-aigc-plugins/actions/runs/38921194883",
   "observedCommands": {
+    "file.new": {
+      "id": "file.new",
+      "catalogLine": "file.new — New Presentation: {theme?: name, template?: starter name, size?: [w,h] pt, blank?: bool}"
+    },
     "design.themes": {
-      "enabled": true,
       "id": "design.themes",
-      "label": "Theme Gallery",
-      "menu": [],
-      "params": "{} → themes, colour schemes and font schemes",
-      "shortcut": null
+      "catalogLine": "design.themes — Theme Gallery → themes, colour schemes, font schemes and effect schemes"
+    },
+    "design.theme": {
+      "id": "design.theme",
+      "catalogLine": "design.theme — Themes: {name} (see design.themes)"
+    },
+    "design.colors": {
+      "id": "design.colors",
+      "catalogLine": "design.colors — Colors opens Create New Theme Colors | {name} | {colors: {dk1|lt1|dk2|lt2|accent1..6|hlink|folHlink: #RRGGBB}}"
+    },
+    "design.fonts": {
+      "id": "design.fonts",
+      "catalogLine": "design.fonts — Fonts opens Create New Theme Fonts | {name} | {major, minor}"
     },
     "slide.new": {
-      "disabled_reason": "no presentation open",
-      "enabled": false,
       "id": "slide.new",
-      "label": "New Slide",
-      "menu": [
-        "Home",
-        "Slides"
-      ],
-      "params": "{layout?: layout name or kind (title, titleAndContent, sectionHeader, twoContent, comparison, titleOnly, blank, contentWithCaption, pictureWithCaption), at?: index, title?: text, body?: text}",
-      "shortcut": "Cmd+Shift+N"
+      "catalogLine": "slide.new — New Slide: {layout?: layout name or kind (title, titleAndContent, sectionHeader, twoContent, comparison, titleOnly, blank, contentWithCaption, pictureWithCaption), at?: index, title?: text, body?: text}"
+    },
+    "slide.notes": {
+      "id": "slide.notes",
+      "catalogLine": "slide.notes — Notes: {text | body: formatted notes (as in slide.inspect's notesBody), index?} (text as typed: untouched notes keep their formatting)"
     }
   },
   "sceneAcceptance": "NOT_RUN"

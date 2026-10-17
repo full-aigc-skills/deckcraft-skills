@@ -5,12 +5,47 @@
   "execution": "COMMAND_MAPPED_NOT_SCENE_ACCEPTED",
   "steps": [
     {
-      "purpose": "读取实际可用主题",
+      "purpose": "仅创建新的16:9示例；已有文稿不得清空",
+      "command": "file.new",
+      "params": {
+        "size": [
+          960,
+          540
+        ],
+        "blank": true
+      }
+    },
+    {
+      "purpose": "查询实际可用主题，不猜主题名",
       "command": "design.themes",
       "params": {}
     },
     {
-      "purpose": "建立标题页版式",
+      "purpose": "应用查询后选择的主题",
+      "command": "design.theme",
+      "params": {
+        "name": "$theme.name"
+      }
+    },
+    {
+      "purpose": "应用示例品牌强调色；替换为用户品牌值",
+      "command": "design.colors",
+      "params": {
+        "colors": {
+          "accent1": "#1A73E8"
+        }
+      }
+    },
+    {
+      "purpose": "设置标题和正文主题字体；先核实目标机字体",
+      "command": "design.fonts",
+      "params": {
+        "major": "Inter",
+        "minor": "Inter"
+      }
+    },
+    {
+      "purpose": "建立品牌标题页",
       "command": "slide.new",
       "params": {
         "layout": "title",
@@ -19,17 +54,33 @@
       }
     },
     {
-      "purpose": "建立正文示例版",
+      "purpose": "建立正文规范页",
       "command": "slide.new",
       "params": {
         "layout": "titleAndContent",
         "title": "正文规范",
-        "body": "一级要点\n二级说明"
+        "body": "最长标题测试：检查换行、边距、对比度和正文层级。"
+      }
+    },
+    {
+      "purpose": "给第1页写入专属备注",
+      "command": "slide.notes",
+      "params": {
+        "index": 0,
+        "text": "品牌规范：示例强调色为#1A73E8，主题字体Inter；交付前核实品牌授权和目标机字体回退。"
+      }
+    },
+    {
+      "purpose": "给第2页写入专属备注",
+      "command": "slide.notes",
+      "params": {
+        "index": 1,
+        "text": "品牌规范：使用真实最长标题和中英文样本检查溢出；未完成视觉检查前不能宣称模板可直接投影。"
       }
     }
   ],
-  "check": "用最长标题与最多数据验证主题，检查字号、留白和品牌色。",
-  "boundary": "主题名称由 design.themes 返回后再设定，不猜测任意品牌主题存在。",
+  "check": "文档主题实际保存强调色与标题/正文字体；两类页可编辑，最长标题需实际视觉检查。",
+  "boundary": "新建示例仅用于新任务：已有演示文稿先读取页数、选择和内容；不得用file.new清空。索引为0起，仅在此新文稿示例固定；已有文稿重新查询。布局和真实内容质量、外部PowerPoint渲染、宿主同步不由命令通过证明。",
   "templateOnly": true,
   "argumentPolicy": "示例参数必须按当前输入、选择和实际返回ID替换；$变量先解析，数组变量整字段替换，不能将本文件直接当原生CLI脚本执行。"
 }

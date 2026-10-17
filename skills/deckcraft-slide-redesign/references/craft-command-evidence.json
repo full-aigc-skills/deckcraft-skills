@@ -8,39 +8,28 @@
   "ciRun": "https://github.com/partme-ai/full-aigc-plugins/actions/runs/38921194883",
   "observedCommands": {
     "slide.duplicate": {
-      "disabled_reason": "no presentation open",
-      "enabled": false,
       "id": "slide.duplicate",
-      "label": "Duplicate Slide",
-      "menu": [
-        "Insert"
-      ],
-      "params": "{index?}",
-      "shortcut": null
+      "catalogLine": "slide.duplicate — Duplicate Slide: {index?}"
+    },
+    "slide.inspect": {
+      "id": "slide.inspect",
+      "catalogLine": "slide.inspect — Inspect Slide: {index?} → the slide's shapes with ids, kinds, boxes, text, fills, animations, transition, notes (text, and notesBody with its formatting)"
+    },
+    "slide.go": {
+      "id": "slide.go",
+      "catalogLine": "slide.go — Go to Slide: {index} | {id}"
     },
     "slide.layout": {
-      "disabled_reason": "no presentation open",
-      "enabled": false,
       "id": "slide.layout",
-      "label": "Layout",
-      "menu": [
-        "Home",
-        "Slides"
-      ],
-      "params": "{layout: name or kind, index?}",
-      "shortcut": null
+      "catalogLine": "slide.layout — Layout: {layout: name or kind, index?}"
+    },
+    "shape.move": {
+      "id": "shape.move",
+      "catalogLine": "shape.move — Move: {dx?: pt (relative), dy?: pt (relative), ids?} | {x?: pt (absolute), y?: pt (absolute), ids?}"
     },
     "shape.resize": {
-      "disabled_reason": "no presentation open",
-      "enabled": false,
       "id": "shape.resize",
-      "label": "Size",
-      "menu": [
-        "Shape Format",
-        "Size"
-      ],
-      "params": "{w?, h?: pt, lockAspect?: bool, ids?}",
-      "shortcut": null
+      "catalogLine": "shape.resize — Size: {w?: pt, h?: pt, lockAspect?: bool, ids?}"
     }
   },
   "sceneAcceptance": "NOT_RUN"

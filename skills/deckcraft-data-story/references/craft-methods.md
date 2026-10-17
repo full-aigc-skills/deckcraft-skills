@@ -1,31 +1,28 @@
 # 本场景的 Craft 方法与参数
 
-先读取输入与当前选择。数值、路径、名称和对象编号仅为格式示例；用当前输入、实际返回ID和目标尺寸替换后执行。
+新建示例仅用于新任务：已有演示文稿先读取页数、选择和内容；不得用file.new清空。索引为0起，仅在此新文稿示例固定；已有文稿重新查询。布局和真实内容质量、外部PowerPoint渲染、宿主同步不由命令通过证明。
 
-| 顺序与目的 | 实际方法 | 参数例子 |
+| 顺序与目的 | 实际方法 | 参数模板 |
 | --- | --- | --- |
-| 1. 先建立结论标题页 | `slide.new` | `{"layout":"titleOnly","title":"结论与数据依据"}` |
-| 2. 用真实数据创建比较图 | `insert.chart` | `{"type":"column","categories":["A","B"],"series":[{"name":"指标","values":[21,42]}]}` |
-| 3. 标注数据来源与限制 | `slide.notes` | `{"text":"原表、单位、时间范围、异常项与比较限制"}` |
+| 1. 仅创建新的16:9示例；已有文稿不得清空 | `file.new` | `{"size":[960,540],"blank":true}` |
+| 2. 建立结论与数据依据页 | `slide.new` | `{"layout":"titleOnly","title":"结论与数据依据","body":""}` |
+| 3. 用原生柱状图保留数据和类别顺序 | `insert.chart` | `{"type":"column","rect":[80,150,800,300],"categories":["A","B"],"series":[{"name":"指标","values":[21,42]}]}` |
+| 4. 给第1页写入专属备注 | `slide.notes` | `{"index":0,"text":"数据依据：A/B与21/42仅为示例；替换为真实数据并注明单位、周期、来源和缺失值处理。"}` |
+| 5. 建立解释边界与下一步页 | `slide.new` | `{"layout":"titleAndContent","title":"解释边界与下一步","body":"核实指标定义、样本范围与异常点；相关关系不等于因果；下一步待确认。"}` |
+| 6. 给第2页写入专属备注 | `slide.notes` | `{"index":1,"text":"解释边界：检查轴范围、标签、对比口径与样本限制；当前命令未设置轴基线，不得宣称已配置。"}` |
 
-## 如何调用
+## 调用与动态值
 
-宿主内已打开编辑器时使用该同会话MCP；先等待editor_status就绪，读取实际工具schema和当前命令参数。独立CLI可用于文件任务，但新进程与已打开Web编辑器不是同一状态。
+先读实际运行时schema及[观察目录](craft-command-evidence.json)。`$变量`必须替换为查询到的真实值。品牌主题从`design.themes`返回列表选择；复制页所有对象ID必须来自新增副本，不能沿用源页ID。
 
-本插件MCP包装：`run_command`，参数 `{"command": "slide.new", "params": {"layout": "titleOnly", "title": "结论与数据依据"}}`。后续行保持同一会话和对象选择，逐条检查实际结果。
+需要编辑器同步时，等待editor_status就绪，再通过该编辑器同一会话的`run_command`调用，例如`{"command":"slide.notes","params":{"index":0,"text":"课程目标：完成标准"}}`。独立CLI文件任务使用argv调用`deckcraft-cli run --in input.deckcraft --cmd 'slide.notes={"index":0,"text":"课程目标：完成标准"}' --save output.deckcraft`；shell引号仅为展示，跨平台执行传argv。CLI新进程不会自动改变已打开Web编辑器。CLI run成功可能没有stdout；保存后重新查询或读取工程，不解析不存在的返回ID。
 
-CLI 语法（下面是展示用写法，实际跨平台执行用argv避免shell引号差异）：
+JSON步骤见[craft-steps.json](craft-steps.json)，是参数模板而非可直接执行的脚本；保留输入，另存可编辑原生工程和PPTX。新增页、图表和备注逐项核查，回读PPTX后再次修改图表数据验证可编辑性。
 
-deckcraft-cli run --in input.deckcraft --cmd 'slide.new={"title":"标题"}' --save output.deckcraft。创建新文稿时省略 --in。
+## 结果检查
 
-## 参数核对与完成标准
+两页分别陈述依据和解释边界；图表活数据回读可修改，类别顺序保留，轴和标签仍需视觉检查。
 
-先查 [当前版本观察目录](craft-command-evidence.json) 中对应方法的完整参数，再按实际运行时查询更新。结构化步骤见 [craft-steps.json](craft-steps.json)。
+外部投影效果、字体回退、字号溢出、真实教学或商业内容有效性、安装宿主画面同步需要分别验证；当前不因结构检查通过而宣称完整场景验收。
 
-图表比例不误导，结论与证据一致，使用同口径比较。
-
-边界：不为视觉冲击截断轴或隐藏不利数据；图例单位必须可读。
-
-保存可编辑工程后由新进程或重新打开的同一宿主会话核对；导出格式单独解码/查看。方法存在和零退出不代表本场景已经完成。
-
-工作流来源与许可见 [workflow-sources.json](workflow-sources.json)。仅借鉴事实与方法，本文与参数例子原创编写。
+[来源与许可](workflow-sources.json)：只借鉴工作流事实，步骤及参数原创适配。
