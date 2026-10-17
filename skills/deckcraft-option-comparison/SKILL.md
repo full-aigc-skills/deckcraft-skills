@@ -15,7 +15,7 @@ license: Apache-2.0
 5. 给这一页添加讲者备注，说明数据来源与假设；正文表达比较结果，备注补充口径。没有共同标准时保持客观比较，不自动判定胜者。
 6. 另存 `.deckcraft` 与 `.pptx`，重开检查表格、备注和文字。再在副本修改一个单元格并导出，确认它仍为原生可编辑表格。检查实际整页渲染的溢出、对齐和字号。
 
-需要内嵌编辑器时交给 **deckcraft-editor** 技能。独立安装：`npx skills add full-aigc-skills/deckcraft-skills --skill deckcraft-editor`。新增技能仍为开发候选，未进入主市场发行。
+需要内嵌编辑器时交给 **deckcraft-editor** 技能。独立安装：`npx skills add full-aigc-skills/deckcraft-skills --skill deckcraft-editor`。本技能随DeckCraft开发预发布提供；真实素材与其他宿主仍需分别验收。
 
 示例限定4行3列。内容过长先精简或按维度拆页，续页重复表头；当前流程未验证自动分页、屏幕阅读器表头语义、外部PowerPoint排版和宿主画面同步，不以文件生成代替这些检查。
 
