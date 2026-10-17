@@ -15,7 +15,7 @@ class DataStoryTests(unittest.TestCase):
         self.assertIn('万元',p['commands'][1]['params']['title'])
         self.assertIn('已核对合同台账',p['commands'][4]['params']['text'])
         self.assertEqual(p['commands'][0]['command'],'file.new')
-        self.assertEqual(p['commands'][3],{'command':'chart.options','params':{'title':'2026年9至10月','dataLabels':True,'gridlines':True}})
+        self.assertEqual(p['commands'][3],{'command':'chart.options','params':{'title':'2026年9至10月','dataLabels':True,'gridlines':True,'legend':'r'}})
     def test_missing_values_are_not_zero(self):
         d=self.fixture();d['series'][0]['values']=[21,None]
         with self.assertRaises(ValueError):module.compile_story(d)
