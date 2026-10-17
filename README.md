@@ -93,3 +93,7 @@ Documents are implementation inputs, not proof of delivered runtime behavior. No
 ### Six core workflow checks (2026-10-17)
 
 Training, redesign, brand templates, weekly reports, pitches and data stories now carry concrete Craft methods and parameters. Windows main run 39014846480 and stable matrix 39014843673 passed native/PPTX editable structures, per-slide notes, duplicate object rebinding and chart data revision after import. These are technical fixture checks; real content, external PowerPoint rendering and installed-host synchronization remain unverified. The package remains an unpublished development candidate.
+
+## 方案评审对比表开发候选
+
+新增 `deckcraft-option-comparison` 独立技能入口，深化已有比较表流程：显式表格ID、逐格数据口径、完整列宽及PPTX重开改单元格。参考PptxGenJS固定GitHub提交的表格工作流，步骤及Craft参数原创；官方0.7.0 CLI结构与PPTX回读通过，Windows16条记录回归通过；隔离Codex原生MCP与内置浏览器已观察合成短表内容和单元格修改同步。尚未随主市场发行，真实素材、外部PowerPoint和其他宿主仍未验收。
