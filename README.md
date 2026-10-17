@@ -84,3 +84,7 @@ Documents are implementation inputs, not proof of delivered runtime behavior. No
 ## 场景操作手册
 
 新增 `deckcraft-scenario-playbooks`：8 条带具体命令、参数与检查的流程，见 [技能入口](skills/deckcraft-scenario-playbooks/SKILL.md)。示例数据需替换，实际运行与创作效果状态见命令证据；不将目录存在当验收通过。
+
+## main模板与品牌复用候选
+
+新增[main模板、页面复用及结构化目录指导](skills/deckcraft-scenario-playbooks/references/main-workflows.md)，保留89个新增标识和旧目录重复项的歧义。已有场景main回归通过；新模板/复用流程尚未专项验收。

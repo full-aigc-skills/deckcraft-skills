@@ -26,3 +26,7 @@ license: Apache-2.0
 ## 技能商店场景经验
 
 遇到用证据支撑演示叙事、结构化方案比较、讲稿和可见页面分别检查时，读取[商店工作流适配](references/market-workflows.md)，使用对应的Craft方法和实际结果检查。上游技能不作为运行依赖。
+
+## main模板与复用
+
+在main候选中使用starter模板或从品牌文稿插入指定页时，读取[main新增工作流与目录变化](references/main-workflows.md)。CLI帮助已改为人类可读文本；结构化发现使用当前MCP方法。
